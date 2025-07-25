@@ -7,15 +7,11 @@ const projects = [
   "New Year Countdown",
   "Stylish Animated loginpage",
   "BMI Calculator",
-<<<<<<< HEAD
-  "Rock Paper Scissors Game",
-=======
    "QR Generator",
   "Rock Paper Scissors Game",
   "Reading Journal",
   "Pong Game"
 
->>>>>>> upstream/main
   // Add more project names as needed
 ];
 

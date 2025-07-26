@@ -13,7 +13,8 @@ Welcome to **100_days_100_web_project** – a challenge-based repository to **le
 | DAY-1 | TODOLIST | [TODOLIST]() | Task manager app |
 | DAY-2 | DIGITAL CLOCK | [DIGITAL CLOCK]() | Real-time digital clock |
 | Day 3  | **Calculator**      | [Link]()       | Basic calculator functionality|
-| ...    | ...                 | ...            | ...                         |
+| DAY-10 | MEMORY CARD GAME | [DAY-10](https://github.com/sharvi16/100DAYS_OF_100WEBPROJECTS/tree/main/public/Day%2010) | Memory Card Matching Game |
+
 | Day 100+ | **Coming Soon**  | 🚧             | 🚧                           |
 
 > 📌 Projects will be updated daily. Bookmark this repo and check back often!

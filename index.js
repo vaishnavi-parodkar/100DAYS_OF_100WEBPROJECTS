@@ -58,6 +58,7 @@ projects.forEach((name, index) => {
   link = `public/Day 9/index.html`;
   } else if(name === "Text to PDF Converter"){
     link = `public/Day 10/index.html`;
+  }
   else {
   const folder = `day${String(index + 1).padStart(2, "0")}`;
   link = `public/${folder}/index.html`;

@@ -5,16 +5,12 @@ const projects = [
   "Jewellery-company landing page",
   "Random Image Generator",
   "New Year Countdown",
-  "Stylish Animated loginpage",
+  "Stylish Animat ed loginpage",
   "BMI Calculator",
-  "Digital Clock",
   "QR Generator",
   "Rock Paper Scissors Game",
-
-
-
-  "Reading Journal"
-
+  "Reading Journal",
+  "Digital Clock",
   // Add more project names as needed
 ];
 

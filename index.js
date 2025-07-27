@@ -9,20 +9,13 @@ const projects = [
   "BMI Calculator",
   "QR Generator",
   "Rock Paper Scissors Game",
-
   "Text to PDF Converter",
-
-
-
   "Reading Journal"
-
-
-  "Reading Journal",
   "Pong Game",
   "Colour Picker",
   "Drawing Canvas",
   "Nasa Astronomy Picture of the day",
-  "World Clock"
+  "World Clock",
 
   // Add more project names as needed
 ];

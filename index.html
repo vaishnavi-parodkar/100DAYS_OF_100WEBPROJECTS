@@ -79,7 +79,6 @@
         box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
         border: 1px solid var(--glass-border);
         transition: all 0.3s ease;
-        z-index: 1;
       }
 
       .btn-3d {
@@ -226,7 +225,6 @@
   <body class="bg-dark text-white font-sans pt-24">
     <nav class="fixed top-0 w-full z-50 bg-primary shadow-xl p-4">
       <div class="container mx-auto flex items-center justify-between">
-        <!-- Logo / Title -->
         <a
           href="index.html"
           class="flex items-center gap-2 text-white font-bold text-lg"
@@ -238,28 +236,26 @@
           100_DAYS_100_WEB_PROJECTS
         </a>
 
-        <!-- Hamburger Icon (Mobile) -->
-        <button
-          id="menu-btn"
-          class="text-white lg:hidden focus:outline-none"
-          onclick="document.getElementById('menu').classList.toggle('hidden')"
-        >
+        <button id="hamburger-btn" class="md:hidden">
           <svg
-            class="w-6 h-6"
+            class="w-6 h-6 text-white"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"></path>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
           </svg>
         </button>
 
-        <!-- Nav Links -->
         <div
-          id="menu"
-          class="hidden lg:flex flex-col lg:flex-row gap-4 lg:items-center absolute lg:static top-16 left-0 w-full lg:w-auto bg-primary lg:bg-transparent p-4 lg:p-0"
+          id="mobile-menu"
+          class="hidden md:flex absolute md:static top-16 left-0 w-full bg-primary md:w-auto md:bg-transparent flex flex-row py-4 md:gap-x-4 md:py-0"
         >
           <a
             href="#projects"
@@ -561,7 +557,7 @@
     <button
       id="scrollBtn"
       onclick="scrollToTop()"
-      class="fixed bottom-5 right-5 bg-primary text-white p-4 rounded-full shadow-lg z-[60] btn-3d hidden"
+      class="fixed bottom-5 right-5 bg-primary text-white p-4 rounded-full shadow-lg btn-3d hidden"
     >
       <i class="fas fa-arrow-up"></i>
     </button>

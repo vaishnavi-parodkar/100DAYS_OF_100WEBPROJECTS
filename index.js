@@ -59,27 +59,20 @@ randomBtn.addEventListener("click", () => {
   randomBtn.textContent = " Show All";
   showingRandom = true;
 });
-
 projects.forEach((name, index) => {
   const day = `Day ${String(index + 1).padStart(2, "0")}`;
   let link;
+
   if (name === "QR Generator") {
-
-  link = `public/Day 9/index.html`;
-} else if (name === "Text to PDF Converter") {
-  link = `public/Day 10/index.html`;
-} else {
-  const folder = `day${String(index + 1).padStart(2, "0")}`;
-  link = `public/${folder}/index.html`;
-
     link = `public/Day 9/index.html`;
+  } else if (name === "Text to PDF Converter") {
+    link = `public/Day 10/index.html`;
   } else if (name === "Nasa Astronomy Picture of the day") {
     link = "https://sabaaa01.github.io/NASA-astronomy-photo-of-the-day/";
   } else {
     const folder = `day${String(index + 1).padStart(2, "0")}`;
     link = `public/${folder}/index.html`;
   }
-
 
   const row = document.createElement("tr");
   row.classList.add("project-row");
@@ -94,3 +87,4 @@ projects.forEach((name, index) => {
 
   tableBody.appendChild(row);
 });
+

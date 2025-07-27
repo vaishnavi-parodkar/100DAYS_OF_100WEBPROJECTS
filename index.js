@@ -1,4 +1,3 @@
-<script>
 const projects = [
   "Animated Landing Page",
   "To-Do List",
@@ -19,7 +18,6 @@ const projects = [
   "World Clock"
 ];
 
-// Toggle hamburger menu
 const hamburgerBtn = document.getElementById('hamburger-btn');
 const mobileMenu = document.getElementById('mobile-menu');
 
@@ -27,12 +25,11 @@ hamburgerBtn.addEventListener('click', () => {
   mobileMenu.classList.toggle('hidden');
 });
 
-// Count & display total projects
 const tableBody = document.getElementById("tableBody");
 const projectCount = document.getElementById("projectCount");
 projectCount.textContent = projects.length;
 
-// Random project functionality
+// Random project button
 const randomBtn = document.getElementById("randomProjectBtn");
 let showingRandom = false;
 let lastRandomIndex = null;
@@ -59,18 +56,15 @@ randomBtn.addEventListener("click", () => {
   showingRandom = true;
 });
 
-// Populate project list
+// Display project rows
 projects.forEach((name, index) => {
   const day = `Day ${String(index + 1).padStart(2, "0")}`;
   let link = "";
 
-  // Custom links for specific projects
   if (name === "QR Generator") {
-    link = `public/Day 09/index.html`;
+    link = "public/Day 09/index.html";
   } else if (name === "Text to PDF Converter") {
-    link = `public/Day 10/index.html`;
-  } else if (name === "Nasa Astronomy Picture of the day") {
-    link = "https://sabaaa01.github.io/NASA-astronomy-photo-of-the-day/";
+    link = "public/Day 10/index.html";
   } else {
     const folder = `Day ${String(index + 1).padStart(2, "0")}`;
     link = `public/${folder}/index.html`;
@@ -89,5 +83,5 @@ projects.forEach((name, index) => {
 
   tableBody.appendChild(row);
 });
-</script>
+
 

@@ -9,14 +9,21 @@ const projects = [
   "BMI Calculator",
    "QR Generator",
   "Rock Paper Scissors Game",
-
-
-
   "Reading Journal",
+  "Pong Game",
+  "Colour Picker",
+  "Drawing Canvas",
   "Temperature Converter"
 
   // Add more project names as needed
 ];
+
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+hamburgerBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+});
 
 const tableBody = document.getElementById("tableBody");
 const projectCount = document.getElementById("projectCount");

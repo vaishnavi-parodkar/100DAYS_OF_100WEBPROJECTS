@@ -8,11 +8,11 @@ const projects = [
   "Stylish Animated loginpage",
   "BMI Calculator",
    "QR Generator",
+   "Snake And Ladder Game",
   "Rock Paper Scissors Game",
 
 
-
-  "Reading Journal"
+  "Reading Journal",
 
   // Add more project names as needed
 ];

@@ -12,7 +12,8 @@ const projects = [
 
 
 
-  "Reading Journal"
+  "Reading Journal",
+  "Temperature Converter"
 
   // Add more project names as needed
 ];

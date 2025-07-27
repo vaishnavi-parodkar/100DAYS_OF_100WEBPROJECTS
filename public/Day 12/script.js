@@ -4,6 +4,7 @@ const inputEl = document.getElementById("temp-ip");
 const outputEl = document.getElementById("temp-op");
 const btnEl = document.getElementById("temp-btn");
 const displayEl = document.getElementById("display");
+const resetBtn = document.getElementById("reset-btn");
 
 btnEl.addEventListener('click', function(event) {
     event.preventDefault();
@@ -50,4 +51,12 @@ btnEl.addEventListener('click', function(event) {
     };
 
     displayEl.textContent = `✅ Converted Temperature: ${result.toFixed(2)} ${unitSymbol[output]}`;
+});
+
+
+resetBtn.addEventListener("click", () => {
+  tempEl.value = "";
+  inputEl.selectedIndex = 0;
+  outputEl.selectedIndex = 0;
+  displayEl.textContent = "";
 });

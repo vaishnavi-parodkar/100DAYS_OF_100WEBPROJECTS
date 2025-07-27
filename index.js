@@ -1,3 +1,4 @@
+<script>
 const projects = [
   "Animated Landing Page",
   "To-Do List",
@@ -10,16 +11,15 @@ const projects = [
   "QR Generator",
   "Rock Paper Scissors Game",
   "Text to PDF Converter",
-  "Reading Journal"
+  "Reading Journal",
   "Pong Game",
   "Colour Picker",
   "Drawing Canvas",
   "Nasa Astronomy Picture of the day",
-  "World Clock",
-
-  // Add more project names as needed
+  "World Clock"
 ];
 
+// Toggle hamburger menu
 const hamburgerBtn = document.getElementById('hamburger-btn');
 const mobileMenu = document.getElementById('mobile-menu');
 
@@ -27,11 +27,12 @@ hamburgerBtn.addEventListener('click', () => {
   mobileMenu.classList.toggle('hidden');
 });
 
+// Count & display total projects
 const tableBody = document.getElementById("tableBody");
 const projectCount = document.getElementById("projectCount");
 projectCount.textContent = projects.length;
 
-// --- Random Project Button Functionality ---
+// Random project functionality
 const randomBtn = document.getElementById("randomProjectBtn");
 let showingRandom = false;
 let lastRandomIndex = null;
@@ -40,37 +41,38 @@ randomBtn.addEventListener("click", () => {
   const rows = tableBody.getElementsByTagName("tr");
 
   if (showingRandom) {
-    // Restore all rows
     for (let i = 0; i < rows.length; i++) {
       rows[i].style.display = "";
     }
-    randomBtn.textContent = " Random";
+    randomBtn.textContent = "Random";
     showingRandom = false;
     lastRandomIndex = null;
     return;
   }
 
-  // Pick a random index
   const randomIndex = Math.floor(Math.random() * projects.length);
   lastRandomIndex = randomIndex;
   for (let i = 0; i < rows.length; i++) {
     rows[i].style.display = i === randomIndex ? "" : "none";
   }
-  randomBtn.textContent = " Show All";
+  randomBtn.textContent = "Show All";
   showingRandom = true;
 });
+
+// Populate project list
 projects.forEach((name, index) => {
   const day = `Day ${String(index + 1).padStart(2, "0")}`;
-  let link;
+  let link = "";
 
+  // Custom links for specific projects
   if (name === "QR Generator") {
-    link = `public/Day 9/index.html`;
+    link = `public/Day 09/index.html`;
   } else if (name === "Text to PDF Converter") {
     link = `public/Day 10/index.html`;
   } else if (name === "Nasa Astronomy Picture of the day") {
     link = "https://sabaaa01.github.io/NASA-astronomy-photo-of-the-day/";
   } else {
-    const folder = `day${String(index + 1).padStart(2, "0")}`;
+    const folder = `Day ${String(index + 1).padStart(2, "0")}`;
     link = `public/${folder}/index.html`;
   }
 
@@ -87,4 +89,5 @@ projects.forEach((name, index) => {
 
   tableBody.appendChild(row);
 });
+</script>
 

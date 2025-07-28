@@ -16,6 +16,8 @@ const projects = [
   "Nasa Astronomy Picture of the day",
   "World Clock",
   "Text to PDF Converter",
+  "Mood Timer"
+
 ];
 
 const hamburgerBtn = document.getElementById('hamburger-btn');
@@ -60,11 +62,15 @@ projects.forEach((name, index) => {
 
   let link;
 
+
   // Handle specific exceptions with hardcoded folders
   if (name === "QR Generator") {
     link = "public/Day 09/index.html";
   } else if (name === "Text to PDF Converter") {
     link = "public/Day 17/index.html";
+
+   if (name === "Nasa Astronomy Picture of the day") {
+    link = "https://sabaaa01.github.io/NASA-astronomy-photo-of-the-day/";
   } else {
     // Default path based on index
     const folder = `Day ${String(index + 1).padStart(2, "0")}`;

@@ -17,6 +17,7 @@ const projects = [
   "World Clock",
   "Mood Timer",
   "text to PDF Convertor",
+  "Memory Card Game",
   // Add more project names as needed
 ];
 

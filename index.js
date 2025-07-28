@@ -84,4 +84,5 @@ projects.forEach((name, index) => {
 
   tableBody.appendChild(row);
 });
+    
 

@@ -56,26 +56,16 @@ randomBtn.addEventListener("click", () => {
   showingRandom = true;
 });
 
-// Display project rows
-projects.forEach((name, index) => {
+projects.forEach((project, index) => {
   const day = `Day ${String(index + 1).padStart(2, "0")}`;
-  let link = "";
-
-  if (name === "QR Generator") {
-    link = "public/Day 09/index.html";
-  } else if (name === "Text to PDF Converter") {
-    link = "public/Day 10/index.html";
-  } else {
-    const folder = `Day ${String(index + 1).padStart(2, "0")}`;
-    link = `public/${folder}/index.html`;
-  }
+  const link = `public/${project.folder}/index.html`;
 
   const row = document.createElement("tr");
   row.classList.add("project-row");
 
   row.innerHTML = `
     <td class="p-4 font-semibold text-primary">${day}</td>
-    <td class="p-4">${name}</td>
+    <td class="p-4">${project.name}</td>
     <td class="p-4">
       <a href="${link}" target="_blank" class="text-primary underline hover:text-pink-500">Live Demo</a>
     </td>
@@ -83,5 +73,3 @@ projects.forEach((name, index) => {
 
   tableBody.appendChild(row);
 });
-
-

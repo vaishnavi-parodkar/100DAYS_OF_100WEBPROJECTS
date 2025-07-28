@@ -55,17 +55,28 @@ randomBtn.addEventListener("click", () => {
   randomBtn.textContent = "Show All";
   showingRandom = true;
 });
-
-projects.forEach((project, index) => {
+projects.forEach((name, index) => {
   const day = `Day ${String(index + 1).padStart(2, "0")}`;
-  const link = `public/${project.folder}/index.html`;
+
+  let link;
+
+  // Handle specific exceptions with hardcoded folders
+  if (name === "QR Generator") {
+    link = "public/Day 09/index.html";
+  } else if (name === "Text to PDF Converter") {
+    link = "public/Day 17/index.html";
+  } else {
+    // Default path based on index
+    const folder = `Day ${String(index + 1).padStart(2, "0")}`;
+    link = `public/${folder}/index.html`;
+  }
 
   const row = document.createElement("tr");
   row.classList.add("project-row");
 
   row.innerHTML = `
     <td class="p-4 font-semibold text-primary">${day}</td>
-    <td class="p-4">${project.name}</td>
+    <td class="p-4">${name}</td>
     <td class="p-4">
       <a href="${link}" target="_blank" class="text-primary underline hover:text-pink-500">Live Demo</a>
     </td>
@@ -73,3 +84,4 @@ projects.forEach((project, index) => {
 
   tableBody.appendChild(row);
 });
+

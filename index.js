@@ -5,7 +5,7 @@ const projects = [
   "Jewellery-company landing page",
   "Random Image Generator",
   "New Year Countdown",
-  "Stylish Animat ed loginpage",
+  "Stylish Animated loginpage",
   "BMI Calculator",
   "QR Generator",
   "Rock Paper Scissors Game",

@@ -8,7 +8,6 @@ const projects = [
   "Stylish Animated loginpage",
   "BMI Calculator",
   "QR Generator",
-  "Memory Card Game",
   "Rock Paper Scissors Game",
   "Reading Journal",
   "Pong Game",
@@ -16,6 +15,7 @@ const projects = [
   "Drawing Canvas",
   "Nasa Astronomy Picture of the day",
   "World Clock"
+  "Memory Card Game",
   // Add more project names as needed
 ];
 

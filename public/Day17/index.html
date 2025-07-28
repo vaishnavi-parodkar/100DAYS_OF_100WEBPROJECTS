@@ -3,68 +3,340 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cute Digital Clock</title>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Mood Timer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ffeef8 0%, #f0f8ff 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.5s ease;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            color: #6b73ff;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .mood-buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .mood-btn {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            border: none;
+            padding: 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            color: white;
+            font-weight: 500;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .mood-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .mood-btn.calm {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+
+        .mood-btn.happy {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+
+        .mood-btn.sleepy {
+            background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
+        }
+
+        .mood-btn.focus {
+            background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+        }
+
+        .timer-section {
+            margin: 2rem 0;
+        }
+
+        .timer-display {
+            font-size: 3rem;
+            font-weight: 300;
+            color: #6b73ff;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            text-shadow: 0 2px 10px rgba(107, 115, 255, 0.3);
+        }
+
+        .progress-circle {
+            width: 150px;
+            height: 150px;
+            margin: 1rem auto;
+            position: relative;
+            border-radius: 50%;
+            background: conic-gradient(#6b73ff 0deg, #e0e7ff 0deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .progress-inner {
+            width: 120px;
+            height: 120px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .mood-emoji {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .message {
+            margin: 1rem 0;
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 300;
+            min-height: 1.5rem;
+        }
+
+        .reset-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .reset-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .reset-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Background changes based on mood */
+        body.calm { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
+        body.happy { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); }
+        body.sleepy { background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%); }
+        body.focus { background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%); }
+
+        /* Mobile responsiveness */
+        @media (max-width: 480px) {
+            .container {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .timer-display {
+                font-size: 2.5rem;
+            }
+            
+            .progress-circle {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .progress-inner {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Background Interactive Zone -->
-    <div class="background-interaction-zone"></div>
-    
-    <!-- Floating Elements - NOW OUTSIDE CONTAINER -->
-    <div class="floating-element heart-float-1"></div>
-    <div class="floating-element star-float-1"></div>
-    <div class="floating-element bubble-float-1"></div>
-    <div class="floating-element heart-float-2"></div>
-    <div class="floating-element star-float-2"></div>
-    <div class="floating-element cloud-float-1"></div>
-    <div class="floating-element sparkle-float-1"></div>
-    
-    <!-- Flip Button -->
-    <button id="flipToStopwatch" class="flip-btn">⏱️</button>
-    
-    <!-- Theme Switcher -->
-    <div class="theme-switcher">
-        <button class="theme-btn" id="themeDefault" data-theme="default"></button>
-        <button class="theme-btn" id="themeOcean" data-theme="ocean"></button>
-        <button class="theme-btn" id="themeSunset" data-theme="sunset"></button>
-        <button class="theme-btn" id="themeForest" data-theme="forest"></button>
-    </div>
-
-    <!-- Main Clock Container -->
-    <div class="container" id="clockContainer">
-        <h1>
-            <span class="header-icon">🕐</span>
-            Digital Clock
-            <span class="header-icon">✨</span>
-        </h1>
-        <div class="digital-clock" id="digitalClock">12:00:00 AM</div>
-        <div class="current-date" id="currentDate">Loading...</div>
-    </div>
-
-    <!-- Stopwatch Container -->
-    <div class="container stopwatch-container" id="stopwatchContainer" style="display: none;">
-        <h1>
-            <span class="header-icon">⏱️</span>
-            Stopwatch
-            <span class="header-icon">⚡</span>
-        </h1>
-        <div class="stopwatch-display" id="stopwatchDisplay">00:00:00</div>
-        <div class="stopwatch-controls">
-            <button class="control-btn start-btn" id="startBtn">Start</button>
-            <button class="control-btn reset-btn" id="resetBtn">Reset</button>
-            <button class="control-btn back-btn" id="backToClockBtn">Back</button>
+    <div class="container">
+        <h1>🦋 Mood Timer</h1>
+        
+        <div class="mood-buttons">
+            <button class="mood-btn calm" onclick="startTimer('calm', 180)">
+                🧘 Calm<br><small>3 minutes</small>
+            </button>
+            <button class="mood-btn happy" onclick="startTimer('happy', 120)">
+                🌈 Happy<br><small>2 minutes</small>
+            </button>
+            <button class="mood-btn sleepy" onclick="startTimer('sleepy', 300)">
+                😴 Sleepy<br><small>5 minutes</small>
+            </button>
+            <button class="mood-btn focus" onclick="startTimer('focus', 600)">
+                🎧 Focus<br><small>10 minutes</small>
+            </button>
         </div>
+
+        <div class="timer-section">
+            <div class="progress-circle" id="progressCircle">
+                <div class="progress-inner">
+                    <div class="mood-emoji" id="moodEmoji">🦋</div>
+                    <div class="timer-display" id="timerDisplay">00:00</div>
+                </div>
+            </div>
+            <div class="message" id="message">Choose your mood to begin ✨</div>
+        </div>
+
+        <button class="reset-btn" onclick="resetTimer()" id="resetBtn">Reset Timer</button>
     </div>
 
-    <!-- Audio -->
-    <audio id="chimeSound" preload="auto">
-        <source src="sounds/chime.mp3" type="audio/mpeg">
-        <source src="sounds/chime.wav" type="audio/wav">
-        Your browser does not support the audio element.
-    </audio>
+    <script>
+        // Timer variables
+        let currentTimer = null;
+        let totalTime = 0;
+        let timeLeft = 0;
+        let currentMood = '';
 
+        // Mood configurations
+        const moods = {
+            calm: { emoji: '🧘', message: 'Take deep breaths and relax...', class: 'calm' },
+            happy: { emoji: '🌈', message: 'Spread joy and positivity!', class: 'happy' },
+            sleepy: { emoji: '😴', message: 'Rest and recharge your energy...', class: 'sleepy' },
+            focus: { emoji: '🎧', message: 'Time to concentrate and achieve!', class: 'focus' }
+        };
 
-    <script src="script.js"></script>
+        // Start timer function
+        function startTimer(mood, duration) {
+            // Clear any existing timer
+            if (currentTimer) {
+                clearInterval(currentTimer);
+            }
+
+            // Set timer variables
+            currentMood = mood;
+            totalTime = duration;
+            timeLeft = duration;
+
+            // Update UI
+            updateMoodTheme(mood);
+            updateDisplay();
+            document.getElementById('message').textContent = moods[mood].message;
+            document.getElementById('moodEmoji').textContent = moods[mood].emoji;
+
+            // Start countdown
+            currentTimer = setInterval(() => {
+                timeLeft--;
+                updateDisplay();
+                updateProgress();
+
+                // Timer finished
+                if (timeLeft <= 0) {
+                    clearInterval(currentTimer);
+                    timerComplete();
+                }
+            }, 1000);
+        }
+
+        // Update timer display
+        function updateDisplay() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            const display = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            document.getElementById('timerDisplay').textContent = display;
+        }
+
+        // Update progress circle
+        function updateProgress() {
+            const progress = ((totalTime - timeLeft) / totalTime) * 360;
+            const circle = document.getElementById('progressCircle');
+            circle.style.background = `conic-gradient(#6b73ff ${progress}deg, #e0e7ff ${progress}deg)`;
+        }
+
+        // Update mood theme
+        function updateMoodTheme(mood) {
+            // Remove all mood classes
+            document.body.className = '';
+            // Add current mood class
+            document.body.classList.add(moods[mood].class);
+        }
+
+        // Timer completion
+        function timerComplete() {
+            document.getElementById('message').textContent = "Time's up! Well done! 🎉";
+            document.getElementById('moodEmoji').textContent = '🎉';
+            
+            // Reset progress circle
+            document.getElementById('progressCircle').style.background = 'conic-gradient(#6b73ff 360deg, #e0e7ff 360deg)';
+            
+            // Reset timer variables
+            currentTimer = null;
+            timeLeft = 0;
+        }
+
+        // Reset timer function
+        function resetTimer() {
+            // Clear timer if running
+            if (currentTimer) {
+                clearInterval(currentTimer);
+                currentTimer = null;
+            }
+
+            // Reset variables
+            timeLeft = 0;
+            totalTime = 0;
+            currentMood = '';
+
+            // Reset UI
+            document.getElementById('timerDisplay').textContent = '00:00';
+            document.getElementById('message').textContent = 'Choose your mood to begin ✨';
+            document.getElementById('moodEmoji').textContent = '🦋';
+            document.getElementById('progressCircle').style.background = 'conic-gradient(#6b73ff 0deg, #e0e7ff 0deg)';
+            
+            // Reset background
+            document.body.className = '';
+        }
+
+        // Initialize app
+        document.addEventListener('DOMContentLoaded', function() {
+            resetTimer();
+        });
+    </script>
 </body>
 </html>

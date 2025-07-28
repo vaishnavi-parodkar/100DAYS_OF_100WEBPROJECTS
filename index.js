@@ -9,20 +9,12 @@ const projects = [
   "BMI Calculator",
    "QR Generator",
   "Rock Paper Scissors Game",
-
-
-  "Reading Journal",
-
-  "QR Generator",
-  "Rock Paper Scissors Game",
   "Reading Journal",
   "Pong Game",
   "Colour Picker",
   "Drawing Canvas",
   "Nasa Astronomy Picture of the day",
   "World Clock"
-  
-  "World Clock",
   "Mood Timer",
   "text to PDF Convertor",
   "Memory Card Game",

@@ -15,9 +15,9 @@ const projects = [
   "Drawing Canvas",
   "Nasa Astronomy Picture of the day",
   "World Clock",
-  "Text to PDF Converter",
-  "Mood Timer"
-
+  "Mood Timer",
+  "text to PDF Convertor",
+  // Add more project names as needed
 ];
 
 const hamburgerBtn = document.getElementById('hamburger-btn');
@@ -31,7 +31,7 @@ const tableBody = document.getElementById("tableBody");
 const projectCount = document.getElementById("projectCount");
 projectCount.textContent = projects.length;
 
-// Random project button
+// --- Random Project Button Functionality ---
 const randomBtn = document.getElementById("randomProjectBtn");
 let showingRandom = false;
 let lastRandomIndex = null;
@@ -40,40 +40,33 @@ randomBtn.addEventListener("click", () => {
   const rows = tableBody.getElementsByTagName("tr");
 
   if (showingRandom) {
+    // Restore all rows
     for (let i = 0; i < rows.length; i++) {
       rows[i].style.display = "";
     }
-    randomBtn.textContent = "Random";
+    randomBtn.textContent = " Random";
     showingRandom = false;
     lastRandomIndex = null;
     return;
   }
 
+  // Pick a random index
   const randomIndex = Math.floor(Math.random() * projects.length);
   lastRandomIndex = randomIndex;
   for (let i = 0; i < rows.length; i++) {
     rows[i].style.display = i === randomIndex ? "" : "none";
   }
-  randomBtn.textContent = "Show All";
+  randomBtn.textContent = " Show All";
   showingRandom = true;
 });
+
 projects.forEach((name, index) => {
   const day = `Day ${String(index + 1).padStart(2, "0")}`;
-
   let link;
-
-
-  // Handle specific exceptions with hardcoded folders
-  if (name === "QR Generator") {
-    link = "public/Day 09/index.html";
-  } else if (name === "Text to PDF Converter") {
-    link = "public/Day 17/index.html";
-
    if (name === "Nasa Astronomy Picture of the day") {
     link = "https://sabaaa01.github.io/NASA-astronomy-photo-of-the-day/";
   } else {
-    // Default path based on index
-    const folder = `Day ${String(index + 1).padStart(2, "0")}`;
+    const folder = `day${String(index + 1).padStart(2, "0")}`;
     link = `public/${folder}/index.html`;
   }
 
@@ -90,5 +83,4 @@ projects.forEach((name, index) => {
 
   tableBody.appendChild(row);
 });
-    
 

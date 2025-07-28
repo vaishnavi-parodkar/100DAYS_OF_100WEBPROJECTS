@@ -15,7 +15,8 @@ const projects = [
   "Drawing Canvas",
   "Nasa Astronomy Picture of the day",
   "World Clock",
-  "Mood Timer"
+  "Mood Timer",
+  "text to PDF Convertor",
   // Add more project names as needed
 ];
 
@@ -82,3 +83,4 @@ projects.forEach((name, index) => {
 
   tableBody.appendChild(row);
 });
+

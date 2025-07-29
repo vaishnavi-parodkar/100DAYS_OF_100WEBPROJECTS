@@ -20,6 +20,7 @@ const projects = [
    "Memory Card Game",
    "Email Validator",
    "Snake And Ladder Game",
+   "Space Jumper Game",
    "Typing Speed Test Webapp",
 
 

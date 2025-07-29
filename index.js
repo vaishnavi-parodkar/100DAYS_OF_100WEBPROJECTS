@@ -21,6 +21,8 @@ const projects = [
    "Email Validator",
    "Snake And Ladder Game",
    "Space Jumper Game",
+   "Calculator",
+   "Promodoro Timer",
    "Typing Speed Test Webapp",
 
 

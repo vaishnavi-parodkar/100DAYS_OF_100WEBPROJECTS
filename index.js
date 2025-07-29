@@ -17,11 +17,25 @@ const projects = [
   "World Clock",
   "Mood Timer",
   "text to PDF Convertor",
+
    "Memory Card Game",
    "Email Validator",
    "Snake And Ladder Game",
    "Typing Speed Test Webapp",
 
+
+  "Memory Card Game",
+  "Email Validator",
+  "Snake And Ladder Game",
+  "Space Jumper Game",
+  " ",
+  " ",
+  " ",
+  " ",
+  " ",
+  " ",
+  " ",
+  " ",
 
   // Add more project names as needed
 

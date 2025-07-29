@@ -17,7 +17,9 @@ const projects = [
   "World Clock",
   "Mood Timer",
   "text to PDF Convertor",
-  // Add more project names as needed
+   "Memory Card Game",
+   "Email Validator",
+   "Typing Speed Test Webapp",
 ];
 
 const hamburgerBtn = document.getElementById('hamburger-btn');

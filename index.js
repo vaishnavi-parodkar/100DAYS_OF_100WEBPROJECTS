@@ -14,12 +14,13 @@ const projects = [
   "Colour Picker",
   "Drawing Canvas",
   "Nasa Astronomy Picture of the day",
-  "World Clock"
+  "World Clock",
   "Mood Timer",
   "text to PDF Convertor",
   "Memory Card Game",
   "Email Validator",
   "Snake And Ladder Game",
+  "Space War Game",
   // Add more project names as needed
 ];
 

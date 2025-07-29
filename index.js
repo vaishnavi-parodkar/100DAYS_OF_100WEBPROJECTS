@@ -26,7 +26,7 @@ const projects = [
 
  
 
-  // Add more project names as needed
+
 
 ];
 

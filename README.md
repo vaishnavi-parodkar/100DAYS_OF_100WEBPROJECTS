@@ -110,7 +110,7 @@ To contribute or run this repository locally:
 
 ### 1. Clone the Repository
 
-git clone https://github.com/your-username/100DAYS_OF_100WEBPROJECTS.git
+git clone https://github.com/rutikakengal/100DAYS_OF_100WEBPROJECTS.git
 
 ## Thank You for Contributing
 

@@ -20,7 +20,7 @@ const projects = [
   "Memory Card Game",
   "Email Validator",
   "Snake And Ladder Game",
-  "Space War Game",
+  "Space Jumper Game",
   // Add more project names as needed
 ];
 

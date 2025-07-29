@@ -21,7 +21,6 @@ const projects = [
    "Email Validator",
    "Typing Speed Test Webapp",
    "Memory Card Game",
-  "Email Validator",
   "Snake And Ladder Game",
 
 

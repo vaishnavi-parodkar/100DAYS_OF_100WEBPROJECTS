@@ -36,6 +36,7 @@ const projects = [
   " ",
   "Doodle Jump Game"
   // Add more project names as needed
+  "Amazon Clone (Web-Page)",
 ];
 
 const hamburgerBtn = document.getElementById('hamburger-btn');

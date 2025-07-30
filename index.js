@@ -17,13 +17,24 @@ const projects = [
   "World Clock",
   "Mood Timer",
   "text to PDF Convertor",
-   "Memory Card Game",
-   "Email Validator",
-   "Snake And Ladder Game",
-   "Space Jumper Game",
-   "Calculator",
-   "Promodoro Timer",
-   "Typing Speed Test Webapp",
+  "Memory Card Game",
+  "Email Validator",
+  
+  "Snake And Ladder Game",
+  "Space Jumper Game",
+  "Calculator",
+  "Promodoro Timer",
+  "Temperature Converter",
+  "Space War Game",
+  " ",
+  " ",
+  " ",
+  "Guess the Number Game",
+  "Typing Speed Test webapp ",
+  " ",
+  " ",
+  " ",
+  "Doodle Jump Game"
 
 
  

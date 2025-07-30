@@ -19,11 +19,12 @@ const projects = [
   "text to PDF Convertor",
   "Memory Card Game",
   "Email Validator",
-  "Temperature Converter",
+  
   "Snake And Ladder Game",
   "Space Jumper Game",
   "Calculator",
   "Promodoro Timer",
+  "Temperature Converter",
   " ",
   " ",
   " ",

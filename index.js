@@ -29,7 +29,7 @@ const projects = [
   " ",
   " ",
   " ",
-  " ",
+  "Guess the Number Game",
   " "
   // Add more project names as needed
 ];

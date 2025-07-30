@@ -19,16 +19,18 @@ const projects = [
   "text to PDF Convertor",
   "Memory Card Game",
   "Email Validator",
+  
   "Snake And Ladder Game",
   "Space Jumper Game",
   "Calculator",
   "Promodoro Timer",
+  "Temperature Converter",
   "Space War Game",
   " ",
   " ",
   " ",
   " ",
-  " ",
+  " "
   // Add more project names as needed
 ];
 

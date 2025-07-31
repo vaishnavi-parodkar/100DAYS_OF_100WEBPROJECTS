@@ -10,7 +10,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -277,9 +276,68 @@
       .search-container {
         position: relative;
         display: flex;
+        flex-direction: column; /* Stack vertically on small screens */
         align-items: center;
         max-width: 500px;
-        margin: 0 auto;
+        margin: 2rem 0rem 3rem 35rem ;
+      }
+      /* ... your existing CSS ... */
+
+@media (max-width: 767px) { /* Adjust for screens smaller than medium (768px) */
+  .hero-bg {
+      padding-top: 5rem; /* Add some top padding for smaller screens */
+      padding-bottom: 5rem; /* Add some bottom padding for smaller screens */
+  }
+
+  .hero-bg h1 {
+      font-size: 3.5rem; /* Adjust heading size for smaller screens */
+  }
+
+  .hero-bg p {
+      font-size: 1.125rem; /* Adjust paragraph size for smaller screens */
+  }
+
+  .search-container {
+      margin: 2rem auto 3rem auto; /* Center the search container */
+      max-width: 90%; /* Make it take up more width on smaller screens */
+  }
+
+  .random-btn {
+      margin-left: 0 !important; /* Remove left margin on small screens */
+  }
+
+  .tag-filter {
+      width: calc(50% - 0.5rem); /* Make tags two per row on smaller screens, accounting for gap */
+      text-align: center;
+  }
+  .theme-toggle {
+    top: 110px; /* Adjust top position for smaller screens */
+    right: 20px; /* Move to the left side for better accessibility on small screens */
+    left: auto; /* Remove right positioning */
+    width: 50px; /* Slightly smaller button for small screens */
+    height: 50px; /* Slightly smaller button for small screens */
+    font-size: 20px; /* Smaller icon size */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) { /* Adjust for medium screens */
+  .search-container {
+      margin: 2rem auto 3rem auto; /* Center on medium screens as well */
+      max-width: 80%; /* Adjust max-width for tablets */
+  }
+}
+
+/* You already have this for medium screens and up, which is good: */
+/* @media (min-width: 768px) {
+  .search-container {
+      flex-direction: row;
+  }
+} */
+      
+      @media (min-width: 768px) { /* On medium screens and up, make it a row */
+        .search-container {
+          flex-direction: row;
+        }
       }
 
       .search-input {
@@ -292,6 +350,7 @@
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         backdrop-filter: blur(20px);
         font-size: 16px;
+        width: 100%; /* Full width on small screens */
       }
 
       .search-input:focus {
@@ -410,7 +469,7 @@
 
           <div
             id="mobile-menu"
-            class="hidden md:flex absolute md:static top-16 left-0 w-full navbar-glass md:w-auto md:bg-transparent flex flex-row py-4 md:gap-x-6 md:py-0"
+            class="hidden md:flex absolute md:static top-16 left-0 w-full navbar-glass md:w-auto md:bg-transparent flex flex-col md:flex-row py-4 md:gap-x-6 md:py-0"
           >
             <a
               href="#projects"
@@ -432,9 +491,8 @@
       </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="min-h-screen flex flex-col justify-center items-center pt-100 text-center hero-bg relative">
-      <div class="container mx-auto px-4 relative z-10 ">
+    <section class="min-h-screen flex flex-col justify-center items-center pt-100 text-center hero-bg relative px-4">
+      <div class="container mx-auto relative z-10 ">
         <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
           <span class="gradient-text">100 DAYS</span>
           <br>
@@ -447,7 +505,7 @@
           <span class="text-accent font-medium">JavaScript</span> at their finest!
         </p>
         
-        <div class="mt-12 space-y-8">
+        <div class="mt-12 space-y-4 md:space-y-0">
           <div class="search-container">
             <input
               type="text"
@@ -457,13 +515,12 @@
             />
             <button
               id="randomProjectBtn"
-              class="random-btn text-white px-8 py-4 rounded-full btn-modern ml-6 font-semibold text-lg"
+              class="random-btn text-white px-8 py-4 rounded-full btn-modern mt-4 md:mt-0 md:ml-6 font-semibold text-lg w-full md:w-auto"
             >
               🎲 Surprise Me
             </button>
           </div>
 
-          <!-- Tag Filters -->
           <div class="flex flex-wrap justify-center gap-4 mt-8">
             <button
               class="tag-filter glass-card px-6 py-3 rounded-full text-sm font-medium"
@@ -512,7 +569,6 @@
       </div>
     </section>
     
-    <!-- Projects Table -->
     <section id="projects" class="container mx-auto px-4 py-20">
       <div class="text-center mb-16">
         <h2 class="text-4xl md:text-5xl font-bold mb-4">
@@ -532,8 +588,7 @@
               </tr>
             </thead>
             <tbody id="tableBody">
-              <!-- Dynamic rows injected here -->
-            </tbody>
+              </tbody>
           </table>
         </div>
         
@@ -547,7 +602,6 @@
       </div>
     </section>
 
-    <!-- Enhanced About Section -->
     <section id="about" class="about-section py-24 mt-20">
       <div class="container mx-auto px-4 relative z-10">
         <div class="text-center mb-20">
@@ -615,7 +669,6 @@
       </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-slate-900 text-white p-8 mt-20 border-t border-slate-800">
       <div class="container mx-auto grid md:grid-cols-3 gap-12">
         <div>
@@ -705,10 +758,8 @@
       </div>
     </footer>
 
-    <!-- Theme Toggle Button -->
     <button id="themeToggle" class="theme-toggle">🌙</button>
 
-    <!-- Scroll to top button --> 
     <button
       id="scrollBtn"
       onclick="scrollToTop()"
@@ -717,7 +768,6 @@
       <i class="fas fa-arrow-up text-xl"></i>
     </button>
 
-    <!-- Scripts -->
     <script>
       const scrollBtn = document.getElementById("scrollBtn");
       window.onscroll = () => {

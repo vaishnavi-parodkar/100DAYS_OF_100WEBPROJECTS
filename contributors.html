@@ -63,7 +63,7 @@
 
         body {
             background: var(--bg-primary);
-            color: var(--text-primary);
+            color: var(--text-primary); /* Apply text-primary here for base text color */
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             overflow-x: hidden;
         }
@@ -176,6 +176,7 @@
         [data-theme="light"] .navbar-glass {
             background: rgba(255, 255, 255, 0.9);
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            color: var(--bg-primary);
         }
 
         .nav-link {
@@ -241,11 +242,51 @@
             animation: pulse-slow 2s ease-in-out infinite;
         }
 
+        /* --- FIXES START HERE --- */
+
+        /* Remove specific Tailwind color overrides for text that should use CSS variables */
+        /* These rules are no longer needed as the base elements will use --text-primary or --text-secondary by default */
+        /*
         [data-theme="light"] .text-white {
             color: var(--text-primary) !important;
         }
 
         [data-theme="light"] .text-gray-400 {
+            color: var(--text-secondary) !important;
+        }
+        */
+
+        /* Explicitly set color for elements that might inherit dark mode colors */
+        [data-theme="light"] h1,
+        [data-theme="light"] h2,
+        [data-theme="light"] h3,
+        [data-theme="light"] p,
+        [data-theme="light"] span,
+        [data-theme="light"] a,
+        [data-theme="light"] div:not(.gradient-text):not(.text-primary):not(.text-secondary):not(.text-accent) {
+            color: var(--text-primary);
+        }
+
+        /* Ensure social media icons retain their specific colors in light mode but use a fallback for general icons */
+        [data-theme="light"] .fas,
+        [data-theme="light"] .fab {
+            color: var(--text-primary); /* Default for general icons */
+        }
+
+        /* Re-apply specific icon colors */
+        [data-theme="light"] .fab.fa-instagram {
+            color: #E1306C; /* Instagram brand color */
+        }
+
+        [data-theme="light"] .fab.fa-github {
+            color: #333; /* Darker GitHub icon for light mode */
+        }
+
+        [data-theme="light"] .fab.fa-linkedin {
+            color: #0077B5; /* LinkedIn brand color */
+        }
+
+        [data-theme="light"] .hero-subtitle {
             color: var(--text-secondary) !important;
         }
 
@@ -257,15 +298,24 @@
             box-shadow: 0 25px 50px -12px rgba(99, 102, 241, 0.25);
         }
 
-        /* Ensure visibility in light mode */
-        [data-theme="light"] .fas,
-        [data-theme="light"] .fab {
-            color: var(--text-primary);
+        /* Adjust footer text colors for light mode to ensure visibility */
+        [data-theme="light"] footer {
+            background-color: var(--bg-secondary); /* Use light secondary background */
+            color: var(--text-primary); /* Use light primary text color */
+            border-top: 1px solid var(--glass-border);
         }
 
-        [data-theme="light"] .hero-subtitle {
+        [data-theme="light"] footer .text-slate-300 {
             color: var(--text-secondary) !important;
         }
+
+        [data-theme="light"] footer .text-slate-400 {
+            color: var(--text-secondary) !important;
+        }
+
+
+        /* --- FIXES END HERE --- */
+
 
         .btn-modern {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -312,42 +362,59 @@
             pointer-events: auto;
             /* Enable interactions when shown */
         }
-        @media (max-width: 767px) { /* Adjust for screens smaller than medium (768px) */
+
+        @media (max-width: 767px) {
+            /* Adjust for screens smaller than medium (768px) */
             .hero-bg {
-                padding-top: 5rem; /* Add some top padding for smaller screens */
-                padding-bottom: 5rem; /* Add some bottom padding for smaller screens */
+                padding-top: 5rem;
+                /* Add some top padding for smaller screens */
+                padding-bottom: 5rem;
+                /* Add some bottom padding for smaller screens */
             }
-          
+
             .hero-bg h1 {
-                font-size: 3.5rem; /* Adjust heading size for smaller screens */
+                font-size: 3.5rem;
+                /* Adjust heading size for smaller screens */
             }
-          
+
             .hero-bg p {
-                font-size: 1.125rem; /* Adjust paragraph size for smaller screens */
+                font-size: 1.125rem;
+                /* Adjust paragraph size for smaller screens */
             }
-          
+
             .search-container {
-                margin: 2rem auto 3rem auto; /* Center the search container */
-                max-width: 90%; /* Make it take up more width on smaller screens */
+                margin: 2rem auto 3rem auto;
+                /* Center the search container */
+                max-width: 90%;
+                /* Make it take up more width on smaller screens */
             }
-          
+
             .random-btn {
-                margin-left: 0 !important; /* Remove left margin on small screens */
+                margin-left: 0 !important;
+                /* Remove left margin on small screens */
             }
-          
+
             .tag-filter {
-                width: calc(50% - 0.5rem); /* Make tags two per row on smaller screens, accounting for gap */
+                width: calc(50% - 0.5rem);
+                /* Make tags two per row on smaller screens, accounting for gap */
                 text-align: center;
             }
+
             .theme-toggle {
-              top: 110px; /* Adjust top position for smaller screens */
-              right: 20px; /* Move to the left side for better accessibility on small screens */
-              left: auto; /* Remove right positioning */
-              width: 50px; /* Slightly smaller button for small screens */
-              height: 50px; /* Slightly smaller button for small screens */
-              font-size: 20px; /* Smaller icon size */
+                top: 110px;
+                /* Adjust top position for smaller screens */
+                right: 20px;
+                /* Move to the left side for better accessibility on small screens */
+                left: auto;
+                /* Remove right positioning */
+                width: 50px;
+                /* Slightly smaller button for small screens */
+                height: 50px;
+                /* Slightly smaller button for small screens */
+                font-size: 20px;
+                /* Smaller icon size */
             }
-          }
+        }
     </style>
 </head>
 
@@ -355,7 +422,7 @@
 
     <nav class="fixed top-0 w-full z-50 navbar-glass shadow-xl p-4">
         <div class="container mx-auto flex flex-col sm:flex-row items-center justify-between">
-            <a href="index.html" class="flex items-center gap-3 text-white font-bold text-lg mb-2 sm:mb-0">
+            <a href="index.html" class="flex items-center gap-3 font-bold text-lg mb-2 sm:mb-0" style="color: var(--text-primary);">
                 <img
                     src="https://i.pinimg.com/736x/1c/54/f7/1c54f7b06d7723c21afc5035bf88a5ef.jpg"
                     class="h-12 w-12 rounded-full object-cover ring-2 ring-primary/30"
@@ -363,11 +430,11 @@
                 />
                 <span class="whitespace-nowrap gradient-text text-xl font-extrabold"> 100_DAYS_100_WEB_PROJECT </span>
             </a>
-    
-      
+
+
         </div>
     </nav>
-    
+
 
     <button id="themeToggle" class="theme-toggle">🌙</button>
 
@@ -664,8 +731,8 @@
             mobileMenu.classList.toggle('mobile-menu-show');
         }
 
-        mobileMenuButton.addEventListener('click', toggleMobileMenu);
-        closeMobileMenu.addEventListener('click', toggleMobileMenu);
+        // mobileMenuButton.addEventListener('click', toggleMobileMenu); // commented out as button is not present in provided code
+        // closeMobileMenu.addEventListener('click', toggleMobileMenu); // commented out as button is not present in provided code
 
         // Add event listeners to navigation links within the mobile menu
         document.querySelectorAll('#mobileMenu .nav-link').forEach(link => {

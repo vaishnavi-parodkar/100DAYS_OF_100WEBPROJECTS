@@ -50,7 +50,7 @@
       }
       [data-theme="light"] .bg-dark {
         background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%) !important;
-        color: var(--text-primary) !important;
+        /* Removed color: var(--text-primary) !important; as it was causing issues for child elements */
       }
       :root {
         --bg-primary: #0f172a;
@@ -69,7 +69,7 @@
       [data-theme="light"] {
         --bg-primary: #ffffff;
         --bg-secondary: #f8fafc;
-        --text-primary: #1e293b;
+        --text-primary: #1e293b; /* Changed from light slate to dark for visibility */
         --text-secondary: #64748b;
         --accent-color: #6366f1;
         --glass-bg: rgba(255, 255, 255, 0.9);
@@ -100,8 +100,8 @@
         right: 0;
         bottom: 0;
         background: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.3) 0%, transparent 50%),
-                    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
-                    radial-gradient(circle at 40% 80%, rgba(6, 182, 212, 0.3) 0%, transparent 50%);
+                        radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(6, 182, 212, 0.3) 0%, transparent 50%);
         animation: float 8s ease-in-out infinite;
       }
 
@@ -111,6 +111,8 @@
         border: 1px solid var(--glass-border);
         box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        /* Ensure text in glass-card is visible in light mode */
+        color: var(--text-primary);
       }
 
       .glass-card:hover {
@@ -165,6 +167,8 @@
         border: 2px solid transparent;
         position: relative;
         overflow: hidden;
+        /* Ensure tag filter text is visible in light mode before hover */
+        color: var(--text-primary);
       }
 
       .tag-filter::before {
@@ -214,6 +218,7 @@
         background: var(--glass-bg);
         backdrop-filter: blur(20px);
         border: 1px solid var(--glass-border);
+        color: var(--text-primary); /* Ensure toggle icon color is visible */
       }
 
       .theme-toggle:hover {
@@ -393,6 +398,14 @@
         background: rgba(255, 255, 255, 0.9);
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       }
+      /* Specifically target text within navbar-glass for light mode */
+      [data-theme="light"] .navbar-glass .text-white {
+        color: var(--text-primary) !important; /* Force dark text in light mode */
+      }
+      [data-theme="light"] .navbar-glass svg {
+        color: var(--text-primary) !important; /* Force dark icon in light mode */
+      }
+
 
       .nav-link {
         position: relative;
@@ -435,6 +448,36 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
+      }
+      /* Ensure text in the project showcase and about sections is visible */
+      [data-theme="light"] .text-white {
+        color: var(--text-primary) !important;
+      }
+      [data-theme="light"] .text-slate-300 {
+          color: var(--text-secondary) !important;
+      }
+      [data-theme="light"] .text-slate-500 {
+          color: var(--text-secondary) !important;
+      }
+      [data-theme="light"] .text-slate-400 {
+          color: var(--text-secondary) !important;
+      }
+
+      /* Specific fix for the "No Projects Found" text */
+      [data-theme="light"] #no-projects .text-slate-300,
+      [data-theme="light"] #no-projects .text-slate-500 {
+        color: var(--text-primary) !important;
+      }
+
+      /* Specific fix for the footer text */
+      [data-theme="light"] footer .text-slate-300,
+      [data-theme="light"] footer .text-slate-400 {
+        color: var(--text-secondary) !important;
+      }
+      /* Adjust footer background in light mode */
+      [data-theme="light"] footer {
+        background: var(--bg-secondary) !important;
+        border-top-color: var(--glass-border) !important;
       }
     </style>
   </head>

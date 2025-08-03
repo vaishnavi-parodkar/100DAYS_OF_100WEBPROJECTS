@@ -41,7 +41,7 @@ const projects = [
   " ",
   "Doodle Jump Game",
   " ",
-  " ",
+  "Random Password Generator",
   "Digital Clock",
   "Doodle Jump Game",
   "BrainBuzz Quizz Website",

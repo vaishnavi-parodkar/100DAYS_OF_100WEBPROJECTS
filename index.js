@@ -1,6 +1,6 @@
 const projects = [
   "Animated Landing Page",
-  "Advanced To-Do List",
+  " Advanced To-Do List",
   "Weather Forecast App",
   "Jewellery-company landing page",
   "Random Image Generator",
@@ -18,27 +18,35 @@ const projects = [
   "Mood Timer",
   "text to PDF Convertor",
   "Memory Card Game",
-  "Email Validator",
-  
+  "Email Validator",  
   "Snake And Ladder Game",
   "Space Jumper Game",
   "Calculator",
   "Promodoro Timer",
   "Temperature Converter",
   "Space War Game",
-  " ",
-  " ",
+  "CHESS GAME",
+  "Bubble Shooter Game",
   " ",
   "Guess the Number Game",
+
+  "Typing Speed Test webapp ",
+
+  "",
   " ",
-  " ",
-  " ",
-  " ",
-  "Doodle Jump Game"
+  "Snake Game ",
 
   " ",
   "3d Solar System ",
+  " ",
+  "Doodle Jump Game",
+  " ",
+  " ",
+  "Digital Clock",
+  "Doodle Jump Game",
+  "BrainBuzz Quizz Website",
   // Add more project names as needed
+
 ];
 
 const hamburgerBtn = document.getElementById('hamburger-btn');
@@ -84,8 +92,12 @@ randomBtn.addEventListener("click", () => {
 projects.forEach((name, index) => {
   const day = `Day ${String(index + 1).padStart(2, "0")}`;
   let link;
-   if (name === "Nasa Astronomy Picture of the day") {
+  
+  // Dynamic link generation for specific projects
+  if (name === "Nasa Astronomy Picture of the day") {
     link = "https://sabaaa01.github.io/NASA-astronomy-photo-of-the-day/";
+  } else if (name === "BrainBuzz Quizz Website") {
+    link = "https://brain-buzz-six.vercel.app/";
   } else {
     const folder = `day${String(index + 1).padStart(2, "0")}`;
     link = `public/${folder}/index.html`;
@@ -104,4 +116,3 @@ projects.forEach((name, index) => {
 
   tableBody.appendChild(row);
 });
-

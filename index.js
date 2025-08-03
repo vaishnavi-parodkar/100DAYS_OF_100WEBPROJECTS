@@ -29,9 +29,13 @@ const projects = [
   " ",
   " ",
   "Guess the Number Game",
+
+  "Typing Speed Test webapp ",
+
   "",
   " ",
   "Snake Game ",
+
   " ",
   " ",
   " ",
@@ -42,6 +46,7 @@ const projects = [
   "Doodle Jump Game",
   "BrainBuzz Quizz Website",
   // Add more project names as needed
+
 ];
 
 const hamburgerBtn = document.getElementById('hamburger-btn');

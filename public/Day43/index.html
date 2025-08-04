@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Plant Care Scheduler</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>🌱 Plant Care Scheduler</h1>
+    
+    <form id="plantForm">
+      <input type="text" id="plantName" placeholder="Plant Name" required />
+      <input type="date" id="waterDate" required />
+      <input type="date" id="sunlightDate" required />
+      <button type="submit">Add Plant</button>
+    </form>
+
+    <h2>Your Plants</h2>
+    <div id="plantList"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

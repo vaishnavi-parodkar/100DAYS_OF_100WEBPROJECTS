@@ -32,6 +32,7 @@ const projects = [
 
   "Bubble Shooter Game",
   " ",
+  "Plant Care Scheduler",
   "Guess the Number Game",
 
   "Typing Speed Test webapp ",

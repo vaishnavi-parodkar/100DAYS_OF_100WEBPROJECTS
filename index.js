@@ -7,7 +7,7 @@ const projects = [
   "New Year Countdown",
   "Stylish Animated loginpage",
   "BMI Calculator",
-   "QR Generator",
+  "QR Generator",
   "Rock Paper Scissors Game",
   "Reading Journal",
   "Pong Game",
@@ -18,8 +18,7 @@ const projects = [
   "Mood Timer",
   "text to PDF Convertor",
   "Memory Card Game",
-  "Email Validator",
-  
+  "Email Validator",  
   "Snake And Ladder Game",
   "Space Jumper Game",
   "Calculator",
@@ -27,17 +26,31 @@ const projects = [
   "Temperature Converter",
   "Space War Game",
   "CHESS GAME",
-  " ",
+
+  "Bubble Shooter Game",
   " ",
   "Guess the Number Game",
+  "Typing Speed Test webapp ",
+  "Startup Name Generator Web App",
   "",
   " ",
   "Snake Game ",
+ "Hangman Game",
+  " ",
+  " ",
   " ",
   "Doodle Jump Game",
   "BrainBuzz Quizz Website",
-  "Simon Say Game"
+  "Simon Say Game",
+  " ",
+  " ",
+  "Digital Clock",
+  "Doodle Jump Game",
+  "BrainBuzz Quizz Website",
+  "Code Editor"
+
   // Add more project names as needed
+
 ];
 
 const hamburgerBtn = document.getElementById('hamburger-btn');

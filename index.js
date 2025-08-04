@@ -32,6 +32,7 @@ const projects = [
   "Guess the Number Game",
 
   "Typing Speed Test webapp ",
+  "Startup Name Generator Web App",
 
   "",
   " ",

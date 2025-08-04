@@ -27,12 +27,12 @@ const projects = [
   "Space War Game",
   "CHESS GAME",
 
-  "Plant Care Scheduler",
+  
 
 
   "Bubble Shooter Game",
   " ",
-  "Plant Care Scheduler",
+  
   "Guess the Number Game",
 
   "Typing Speed Test webapp ",
@@ -51,7 +51,8 @@ const projects = [
   "Digital Clock",
   "Doodle Jump Game",
   "BrainBuzz Quizz Website",
-  "Code Editor"
+  "Code Editor",
+  "Plant Care Scheduler",
 
 
   // Add more project names as needed

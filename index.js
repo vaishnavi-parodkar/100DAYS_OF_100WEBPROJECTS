@@ -1,6 +1,6 @@
 const projects = [
   "Animated Landing Page",
-  " Advanced To-Do List",
+  "Advanced To-Do List",
   "Weather Forecast App",
   "Jewellery-company landing page",
   "Random Image Generator",
@@ -39,7 +39,7 @@ const projects = [
   "Snake Game ",
  "Hangman Game",
   " ",
-  "",
+  " ",
   " ",
   "Doodle Jump Game",
   " ",
@@ -47,17 +47,6 @@ const projects = [
   "Digital Clock",
   "Doodle Jump Game",
   "BrainBuzz Quizz Website",
-
- "Hangman Game",
-  " ",
-  " ",
-  " ",
-  "Doodle Jump Game",
-  "Digital Clock",
-  "Doodle Jump Game",
-  "BrainBuzz Quizz Website",
-  "Code Editor",
-  "",
   "Code Editor"
   // Add more project names as needed
 

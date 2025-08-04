@@ -42,7 +42,7 @@ const projects = [
   " ",
   " ",
   "Doodle Jump Game",
-  " ",
+  " currency Converter",
   " ",
   "Digital Clock",
   "Doodle Jump Game",

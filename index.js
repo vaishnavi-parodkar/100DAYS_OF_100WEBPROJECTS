@@ -39,7 +39,7 @@ const projects = [
   "Snake Game ",
 
   " ",
-  "3d Solar System ",
+  "",
   " ",
   "Doodle Jump Game",
   " ",

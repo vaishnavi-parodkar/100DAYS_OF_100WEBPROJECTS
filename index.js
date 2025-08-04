@@ -26,7 +26,6 @@ const projects = [
   "Temperature Converter",
   "Space War Game",
   "CHESS GAME",
-
   "Bubble Shooter Game",
   " ",
   "Guess the Number Game",
@@ -54,16 +53,10 @@ const projects = [
   " ",
   " ",
   "Doodle Jump Game",
-  " ",
-  " ",
   "Digital Clock",
   "Doodle Jump Game",
   "BrainBuzz Quizz Website",
   "Code Editor",
-
-
-
-
   "3d Solar System",
 
   // Add more project names as needed

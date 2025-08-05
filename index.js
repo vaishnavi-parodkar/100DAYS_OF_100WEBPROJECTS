@@ -1,7 +1,7 @@
 const projects = [
   "Animated Landing Page",
-  "To-Do List",
-  "Weather App",
+  "Advanced To-Do List",
+  "Weather Forecast App",
   "Jewellery-company landing page",
   "Random Image Generator",
   "New Year Countdown",
@@ -120,4 +120,3 @@ projects.forEach((name, index) => {
 
   tableBody.appendChild(row);
 });
-

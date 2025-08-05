@@ -1,7 +1,13 @@
 const projects = [
+
     "Animated Landing Page",
   "To-Do List",
   "Weather App",
+
+  "Animated Landing Page",
+  "Advanced To-Do List",
+  "Weather Forecast App",
+
   "Jewellery-company landing page",
   "Random Image Generator",
   "New Year Countdown",
@@ -46,16 +52,19 @@ const projects = [
   " ",
   " ",
   "Doodle Jump Game",
+  " currency Converter",
   " ",
   " ",
+  "",
   "Digital Clock",
+  "Random Password Generator",
   "Doodle Jump Game",
   "BrainBuzz Quizz Website",
   "Code Editor",
   "Plant Care Scheduler",
 
 
-  // Add more project names as needed
+ 
 
 
 ];
@@ -127,4 +136,3 @@ projects.forEach((name, index) => {
 
   tableBody.appendChild(row);
 });
-

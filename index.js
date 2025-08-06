@@ -47,7 +47,7 @@ const projects = [
   "Digital Clock",
   "Doodle Jump Game",
   "BrainBuzz Quizz Website",
-  "Code Editor"
+  "Code Editor",
   // Add more project names as needed
   "Amazon Clone (Web-Page)",
 

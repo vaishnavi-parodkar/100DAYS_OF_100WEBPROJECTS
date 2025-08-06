@@ -23,17 +23,52 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Navbar Background on Scroll
+    // Navbar Background on Scroll (Space Theme)
     window.addEventListener('scroll', function() {
         const navbar = document.querySelector('.navbar');
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            navbar.style.background = 'rgba(10, 10, 30, 0.98)';
+            navbar.style.boxShadow = '0 2px 20px rgba(138, 43, 226, 0.3)';
         } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.background = 'rgba(10, 10, 30, 0.95)';
             navbar.style.boxShadow = 'none';
         }
     });
+
+    // Rocket Launch Animation
+    function launchRocket() {
+        const rocket = document.getElementById('rocket');
+        const launchButton = document.querySelector('.btn-primary');
+        
+        // Reset rocket position and remove any previous animation
+        rocket.classList.remove('launching');
+        rocket.style.bottom = '-100px';
+        rocket.style.opacity = '1';
+        
+        // Add launching class to trigger animation
+        setTimeout(() => {
+            rocket.classList.add('launching');
+        }, 100);
+        
+        // Reset rocket after animation completes
+        setTimeout(() => {
+            rocket.classList.remove('launching');
+            rocket.style.bottom = '-100px';
+            rocket.style.opacity = '1';
+        }, 3500);
+        
+        // Add button feedback
+        launchButton.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            launchButton.style.transform = 'scale(1)';
+        }, 200);
+    }
+    
+    // Add event listener to Launch Mission button
+    const launchButton = document.querySelector('.btn-primary');
+    if (launchButton) {
+        launchButton.addEventListener('click', launchRocket);
+    }
 
     // Animated Counter for Stats
     function animateCounter(element, target, duration = 2000) {

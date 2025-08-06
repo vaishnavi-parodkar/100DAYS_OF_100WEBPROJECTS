@@ -55,7 +55,6 @@ const projects = [
   "BrainBuzz Quizz Website",
   "Code Editor",
   "Spotify Clone",
-  // Add more project names as needed
   "Amazon Clone (Web-Page)",
 
 ];

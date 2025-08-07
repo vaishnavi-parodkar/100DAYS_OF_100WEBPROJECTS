@@ -1,13 +1,13 @@
 const projects = [
   "Animated Landing Page",
-  "To-Do List",
-  "Weather App",
+  "Advanced To-Do List",
+  "Weather Forecast App",
   "Jewellery-company landing page",
   "Random Image Generator",
   "New Year Countdown",
   "Stylish Animated loginpage",
   "BMI Calculator",
-   "QR Generator",
+  "QR Generator",
   "Rock Paper Scissors Game",
   "Reading Journal",
   "Pong Game",
@@ -26,25 +26,36 @@ const projects = [
   "Temperature Converter",
   "Space War Game",
   "CHESS GAME",
+
   "Bubble Shooter Game",
   " ",
   "Guess the Number Game",
-
   "Typing Speed Test webapp ",
-
+  "Startup Name Generator Web App",
   "",
   " ",
   "Snake Game ",
+ "Hangman Game",
+  "Simon Say Game ",
+  " ",
+  " ",
+  "Doodle Jump Game",
+
+  "BrainBuzz Quizz Website",
+  "",
+
+  " currency Converter",
 
   " ",
   " ",
-  " ",
-  "Doodle Jump Game",
-  " ",
-  " ",
+  "",
   "Digital Clock",
+  "Random Password Generator",
   "Doodle Jump Game",
   "BrainBuzz Quizz Website",
+  "Code Editor",
+  "Spotify Clone"
+
   // Add more project names as needed
 
 ];
@@ -116,4 +127,3 @@ projects.forEach((name, index) => {
 
   tableBody.appendChild(row);
 });
-

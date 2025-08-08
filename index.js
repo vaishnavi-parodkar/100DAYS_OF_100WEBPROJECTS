@@ -47,7 +47,7 @@ const projects = [
   " currency Converter",
 
   " ",
-  " ",
+  "GiggleBits",
   "",
   "Digital Clock",
   "Random Password Generator",

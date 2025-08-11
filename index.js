@@ -59,6 +59,7 @@ const projects = [
 
   "Spotify Clone",
   "Plant Care Scheduler",
+  "Mood Quote Poster",
 
 
   // Add more project names as needed

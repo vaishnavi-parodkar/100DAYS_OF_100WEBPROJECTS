@@ -58,10 +58,10 @@ const projects = [
   "Spotify Clone",
   "Plant Care Scheduler",
 
-  "Amazon Clone (Web-Page)",
+ 
   
   "Mood Quote Poster",
-
+  "Amazon Clone (Web-Page)",
 
   // Add more project names as needed
 

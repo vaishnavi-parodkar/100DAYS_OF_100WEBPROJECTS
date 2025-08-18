@@ -28,12 +28,12 @@ const projects = [
   "CHESS GAME",
 
   "Bubble Shooter Game",
-  " ",
+  "Animated Login Form",
   "Guess the Number Game",
   "Typing Speed Test webapp ",
   "Startup Name Generator Web App",
   "",
-  " ",
+  "Recipe Finder",
   "Snake Game ",
  "Hangman Game",
   "Simon Say Game ",
@@ -58,9 +58,9 @@ const projects = [
   "Spotify Clone",
   "Plant Care Scheduler",
 
- 
-  
   "Mood Quote Poster",
+  "Echo Chamber",
+  
   "Amazon Clone (Web-Page)",
 
   // Add more project names as needed

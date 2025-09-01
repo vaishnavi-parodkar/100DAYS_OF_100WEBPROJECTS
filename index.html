@@ -974,6 +974,25 @@
         background: var(--bg-secondary) !important;
         border-top-color: var(--glass-border) !important;
       }
+      }
+
+      .snake-dot {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(240, 147, 251, 0.85), 0 0 20px rgba(245, 87, 108, 0.85);
+  opacity: 0.95;
+  will-change: left, top, opacity, transform;
+}
+
+
     </style>
   </head>
   <body class="bg-dark text-white font-sans pt-24">
@@ -1143,7 +1162,7 @@
     <section id="about" class="about-section py-24 mt-20">
       <div class="container mx-auto px-4 relative z-10">
         <div class="text-center mb-20">
-          <h2 class="text-5xl md:text-6xl font-bold mb-6">
+          <h2 class="Text-5xl md:text-6xl font-bold mb-6">
             <span class="gradient-text">About the</span> <span class="text-white">Challenge</span>
           </h2>
           <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-8"></div>
@@ -1678,6 +1697,95 @@
         window.floatingChatbot = new FloatingChatbot();
       }, 1000);
     </script>
+
+    <!-- Working Snake Cursor script (fully contained and safe) -->
+    <script>
+      (function () {
+        // Create trailing dots that follow the cursor smoothly.
+        const snakeDots = [];
+        const snakeLength = 18; // number of dots
+        const initialX = window.innerWidth / 2;
+        const initialY = window.innerHeight / 2;
+
+        for (let i = 0; i < snakeLength; i++) {
+          const dot = document.createElement("div");
+          dot.className = "snake-dot";
+          // Slightly vary size for a nicer tail visual (optional)
+          const size = Math.max(6, 14 - Math.floor(i * 0.45));
+          dot.style.width = size + "px";
+          dot.style.height = size + "px";
+          document.body.appendChild(dot);
+
+          snakeDots.push({
+            el: dot,
+            x: initialX,
+            y: initialY
+          });
+        }
+
+        const mouse = { x: initialX, y: initialY };
+        window.addEventListener("mousemove", (e) => {
+          mouse.x = e.clientX;
+          mouse.y = e.clientY;
+        });
+
+        // Optional: stop the effect on touch devices (improves performance)
+        function isTouchDevice() {
+          return ("ontouchstart" in window) || navigator.maxTouchPoints > 0;
+        }
+        if (isTouchDevice()) {
+          // Don't show dots on touch devices: remove any created dots and stop
+          snakeDots.forEach(d => d.el.remove());
+          return;
+        }
+
+        function animate() {
+          // target is current mouse position for first dot, then the previous dot's position
+          let tx = mouse.x;
+          let ty = mouse.y;
+          for (let i = 0; i < snakeDots.length; i++) {
+            const d = snakeDots[i];
+
+            // lerp towards target (smooth trailing)
+            d.x += (tx - d.x) * 0.28;
+            d.y += (ty - d.y) * 0.28;
+
+            // put dot centered at x,y using left/top and CSS transform translate(-50%,-50%)
+            d.el.style.left = d.x + "px";
+            d.el.style.top = d.y + "px";
+
+            // fade tail
+            const opacity = Math.max(0.08, 1 - i / snakeDots.length);
+            d.el.style.opacity = opacity;
+
+            // slightly shrink tail more (already done by size) — optional scale
+            const scale = 1 - i / (snakeDots.length * 1.2);
+            d.el.style.transform = `translate(-50%, -50%) scale(${scale})`;
+
+            // next target is this dot's current position
+            tx = d.x;
+            ty = d.y;
+          }
+
+          requestAnimationFrame(animate);
+        }
+
+        // Start animation
+        requestAnimationFrame(animate);
+
+        // Keep dots inside viewport on resize
+        window.addEventListener("resize", () => {
+          const w = window.innerWidth;
+          const h = window.innerHeight;
+          snakeDots.forEach(d => {
+            d.x = Math.min(Math.max(0, d.x), w);
+            d.y = Math.min(Math.max(0, d.y), h);
+          });
+        });
+      })();
+    </script>
+
+    <!-- Keep including other scripts you referenced originally -->
     <script src="index.js"></script>
     <script src="script.js"></script>
   </body>

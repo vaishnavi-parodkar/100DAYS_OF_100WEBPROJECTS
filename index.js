@@ -60,8 +60,14 @@ const projects = [
 
   "Mood Quote Poster",
   "Echo Chamber",
+
   
+  
+
+  "Typing Survival Game",
   "Amazon Clone (Web-Page)",
+
+
 
   // Add more project names as needed
 

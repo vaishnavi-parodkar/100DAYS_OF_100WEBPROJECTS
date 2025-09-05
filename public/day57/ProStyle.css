@@ -31,6 +31,36 @@ body { background-color: #EAEDED; font-family: 'Franklin Gothic Medium','Arial N
   color:#fff; text-decoration:none; padding:.25rem .5rem; border:1px solid transparent; border-radius:.25rem;
   white-space: nowrap;
 }
+
+.langOptions{
+  background-color: #212529;
+  color : white;
+  border : 2px solid #212529;
+}
+
+#opt{
+  background-color : white;
+  color : black; 
+}
+
+.navAccLi{
+  background-color: #212529;
+  color : white;
+  margin-right : 1rem;
+  border : 2px solid #212529;
+
+}
+#op{
+  background-color : white;
+  color : black;
+}
+#o{
+  background-color :#f4c949;
+}
+#opti{
+  background-color : white;
+  color : black;
+}
 .subnav-link:hover{ border-color:#fff; }
 
 

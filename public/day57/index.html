@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Amazon Clone – Accurate Structure</title>
+  <title>Amazon Clone</title>
 
   
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -14,89 +14,108 @@
 </head>
 <body>
 
+<!-- Amazon Header Navbar -->
+<nav class="navbar navbar-dark bg-dark px-2 py-1">
+  <div class="container-fluid d-flex align-items-center">
 
-  <nav class="amz-topnav navbar navbar-expand-xl navbar-dark bg-black py-0">
-    <div class="container-fluid align-items-stretch">
+    <!-- Amazon Logo -->
+    <a class="navbar-brand me-2" href="#">
+      <img src="AmazonLogo.png" alt="Amazon Logo" height="40" width="90">
+    </a>
 
-      
-      <a class="navbar-brand d-flex align-items-center px-2 px-xl-3" href="#">
-        <span class="navLogo" aria-label="Amazon"></span>
-      </a>
+    <!-- Deliver to India (hidden on xs, visible md+) -->
+    <div class="text-white d-none d-md-flex align-items-center me-2">
+      <i class="fa-solid fa-location-dot me-1"></i>
+      <div>
+        <div style="font-size:12px; line-height:1;">Deliver to</div>
+        <strong>India</strong>
+      </div>
+    </div>
 
-      
-      <div class="d-none d-lg-flex flex-column justify-content-center navDLI px-2">
-        <div class="navDel">Deliver to</div>
-        <div class="d-flex align-items-center">
-          <i class="fa-solid fa-location-dot text-white me-1"></i>
-          <div class="navIndia">India</div>
-        </div>
+    <!-- Search Bar (always full width on mobile, centered on desktop) -->
+    <form class="d-flex flex-grow-1 mx-2">
+      <div class="input-group w-100">
+        <select class="form-select form-select-sm" style="max-width:60px;">
+          <option selected>All</option>
+          <option>Industrial & Scientific</option>
+          <option>Home & Kitchen</option>
+          <option>Digital music</option>
+          <option>Electronics</option>
+          <option>Girl's Fashion</option>
+          <option>Electronics</option>
+          <option>Computers</option>
+          <option>Boy's Fashion</option>
+          <option>Men's Fashion</option>
+        </select>
+        <input type="text" class="form-control" placeholder="Search Amazon">
+        <button class="btn btn-warning" type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+    </form>
+
+    <!-- Right side compact icons -->
+    <div class="d-flex align-items-center text-white ms-2">
+
+      <!-- Language  form-select form-select-sm -->
+      <div class="me-3 d-none d-sm-block ">
+        <select class=" langOptions ">
+          <option id="opt">Eng</option>
+          <option id="opt">Hindi</option>
+          <option id="opt">Mar</option>
+          <option id="opt">Sans</option>
+          <option id="opt">Fren</option>
+          <option id="opt">Span</option>
+          <option id="opt">Japa</option>
+          <option id="opt">Areb</option>
+          <option id="opt">Ger</option>
+          <option id="opt">Persi</option>
+          <option id="opt">Rus</option>
+          <option id="opt">Portu</option>
+          <option id="opt">Greek</option>
+        </select>
       </div>
 
-      <form class="amz-search order-3 order-xl-2 my-2 my-xl-0 mx-xl-3 flex-grow-1" role="search">
-        <div class="input-group">
-          <select class="form-select amz-all">
-            <option selected>All</option>
-            <option>Industrial & Scientific</option>
-            <option>Home & Kitchen</option>
-            <option>Digital Music</option>
-            <option>Electronics</option>
-            <option>Girls' Fashion</option>
-            <option>Boys' Fashion</option>
-            <option>Computers</option>
-            <option>Men's Fashion</option>
+
+      <!-- Accounts & Lists -->
+      <div class="navHA">
+        <!-- hello sign in --> 
+         <div class="navHello">Hello, sign in</div>
+
+         <!-- Account & Lists -->
+          <select class="navAccLi">
+            <option id="op">Accounts & Lists</option>
+            <option id="o">Sign in</option>
+            <option id="opti">Your Account</option>
+            <option id="opti">Account</option>
+            <option id="opti">Orders</option>
+            <option id="opti">Recommendations</option>
+            <option id="opti">Browsing History</option>
+            <option id="opti">Watchlist</option>
+            <option id="opti">Video Purchases & Rentals</option>
+            <option id="opti">Kindle Unlimited</option>
+            <option id="opti">Content & Devices</option>
+            <option id="opti">Subscribe & Save items</option>
+            <option id="opti">Membership & Subscriptions</option>
+            <option id="opti">Music Library</option>
           </select>
-          <input class="form-control amz-input" type="search" placeholder="Search Amazon" aria-label="Search">
-          <button class="btn amz-search-btn" type="submit" aria-label="Search">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
         </div>
-      </form>
 
-      
-      <ul class="navbar-nav ms-xl-auto align-items-center order-2 order-xl-3 flex-row">
+      <!-- Orders -->
+      <div class="me-3 d-none d-sm-block">
+        <div style="font-size:12px;">Returns</div>
+        <strong>& Orders</strong>
+      </div>
 
-        <li class="nav-item d-none d-md-flex align-items-center px-2 navFL">
-          <span class="navFlag me-2"></span>
-          <select class="form-select form-select-sm bg-black text-white border-0 navLang">
-            <option selected>English</option>
-            <option>Hindi</option>
-            <option>Marathi</option>
-            <option>French</option>
-            <option>Spanish</option>
-            <option>German</option>
-          </select>
-        </li>
+      <!-- Cart -->
+      <a href="#" class="text-white text-decoration-none">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <strong>Cart</strong>
+      </a>
+    </div>
 
-        
-        <li class="nav-item dropdown px-2 navHA">
-          <a class="nav-link dropdown-toggle small text-white-50 lh-1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <div class="navHello">Hello, sign in</div>
-            <div class="fw-semibold text-white">Account &amp; Lists</div>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="#">Sign in</a></li>
-            <li><a class="dropdown-item" href="#">Your Account</a></li>
-            <li><a class="dropdown-item" href="#">Orders</a></li>
-            <li><a class="dropdown-item" href="#">Recommendations</a></li>
-            <li><a class="dropdown-item" href="#">Browsing History</a></li>
-          </ul>
-        </li>
-
-        
-        <li class="nav-item px-2 navRO d-none d-md-block">
-          <a class="nav-link text-white" href="#">
-            <div class="small text-white-50">Returns</div>
-            <div class="fw-semibold">&amp; Orders</div>
-          </a>
-        </li>
-
-        
-        <li class="nav-item px-2 navSC">
-          <a class="nav-link text-white d-flex align-items-center" href="#">
-            <i class="fa-solid fa-cart-shopping fs-5 me-1"></i>
-            <span class="fw-semibold">Cart</span>
-          </a>
-        </li>
+  </div>
+</nav>
 
         
         <button class="navbar-toggler ms-2 d-xl-none" type="button" data-bs-toggle="collapse" data-bs-target="#amzTopCollapse" aria-controls="amzTopCollapse" aria-expanded="false" aria-label="Toggle navigation">

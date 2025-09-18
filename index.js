@@ -1,6 +1,6 @@
 const projects = [
   "Animated Landing Page",
-  "Advanced To-Do List",
+  "Advanced To-Do List", 
   "Weather Forecast App",
   "Jewellery-company landing page",
   "Random Image Generator",

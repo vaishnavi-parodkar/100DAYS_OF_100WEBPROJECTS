@@ -32,7 +32,7 @@ const projects = [
   "Guess the Number Game",
   "Typing Speed Test webapp ",
   "Startup Name Generator Web App",
-  "",http://localhost:5500/index.html
+  "",
 
   "Recipe Finder",
   "Snake Game ",

@@ -21,7 +21,7 @@ const projects = [
   "Email Validator",  
   "Snake And Ladder Game",
   "Space Jumper Game",
-  "Calculator",
+  "Smart Calculator 2.0",
   "Promodoro Timer",
   "Temperature Converter",
   "Space War Game",
@@ -32,7 +32,8 @@ const projects = [
   "Guess the Number Game",
   "Typing Speed Test webapp ",
   "Startup Name Generator Web App",
-  "",
+  "",http://localhost:5500/index.html
+
   "Recipe Finder",
   "Snake Game ",
  "Hangman Game",

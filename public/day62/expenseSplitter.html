@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Splitter</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="expenseSplitter.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="mode-toggle">
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider round"></span>
+            </label>
+            <span>Dark Mode</span>
+        </div>
+
+        <h1>💸 Expense Splitter</h1>
+
+        <div class="input-section">
+            <input type="text" id="name" placeholder="Enter Name" />
+            <input type="number" id="amount" placeholder="Enter Amount" />
+            <select id="category">
+                <option value="Food">🍔 Food</option>
+                <option value="Travel">✈️ Travel</option>
+                <option value="Shopping">🛍️ Shopping</option>
+                <option value="Rent">🏠 Rent</option>
+                <option value="Others">💡 Others</option>
+            </select>
+            <input type="number" id="percentage" placeholder="Share %" min="0" max="100" />
+            <button id="add-btn">Add Expense</button>
+        </div>
+
+        <div class="list-section">
+            <h2>Expense List</h2>
+            <ul id="expense-list"></ul>
+        </div>
+
+        <div class="result-section">
+            <h2>Result</h2>
+            <button id="calculate-btn">Calculate Split</button>
+            <button id="reset-btn">Reset</button>
+            <button id="export-btn">Export CSV</button>
+            <div id="output"></div>
+            <canvas id="summaryChart" width="400" height="300"></canvas>
+        </div>
+    </div>
+
+    <div id="toast" aria-live="polite"></div>
+
+    <script src="expenseSplitter.js"></script>
+</body>
+
+</html>

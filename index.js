@@ -71,7 +71,7 @@ const projects = [
   "Background Cleaner",
   "Sudoku Solver",
 
-"Typing Speed Chevker",
+"Typing Speed Checker",
   // Add more project names as needed
 
 ];

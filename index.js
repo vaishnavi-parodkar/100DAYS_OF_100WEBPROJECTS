@@ -69,8 +69,8 @@ const projects = [
   "Adventure Flappy Bird",
 "Hacker Runner Game",
   "Background Cleaner",
-  "Sudoku Solver"
-
+  "Sudoku Solver",
+  "Expense Splitter"
 
   // Add more project names as needed
 

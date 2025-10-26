@@ -70,13 +70,8 @@ const projects = [
 "Hacker Runner Game",
   "Background Cleaner",
   "Sudoku Solver",
-  "Expense Splitter"
-
-<<<<<<< Updated upstream
-=======
 "Typing Speed Checker",
 "Expense Splitter",
->>>>>>> Stashed changes
   // Add more project names as needed
 
 ];

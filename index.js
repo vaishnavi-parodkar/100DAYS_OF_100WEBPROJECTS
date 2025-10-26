@@ -21,7 +21,7 @@ const projects = [
   "Email Validator",  
   "Snake And Ladder Game",
   "Space Jumper Game",
-  "Calculator",
+  "Smart Calculator 2.0",
   "Promodoro Timer",
   "Temperature Converter",
   "Space War Game",
